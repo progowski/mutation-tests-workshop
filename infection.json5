@@ -1,0 +1,25 @@
+{
+    "$schema": "vendor/infection/infection/resources/schema.json",
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "timeout": 10,
+    "logs": {
+        "text": "infection.log",
+        "html": "infection.html",
+        "summary": "summary.log",
+        "json": "infection-log.json",
+        "perMutator": "per-mutator.md",
+        "github": true,
+        "stryker": {
+            "badge": "/^release-.*$/"
+        },
+        "summaryJson": "summary.json"
+    },
+    "mutators": {
+        "@default": true
+    },
+    "initialTestsPhpOptions": "-d zend_extension=xdebug.so"
+}

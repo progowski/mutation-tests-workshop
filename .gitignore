@@ -16,6 +16,18 @@
 ###> infection ###
 infection.phar
 infection.phar.asc
+infection.html
+infection.log
+per-mutator.md
+summary.json
+summary.log
+infection-log.json
 ###< infection ###
 
+
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
 
