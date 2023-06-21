@@ -16,6 +16,7 @@
     },
     "require-dev": {
         "infection/infection": "^0.26.19",
+        "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "^9.6"
     },
     "config": {

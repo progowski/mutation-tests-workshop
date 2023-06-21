@@ -10,7 +10,7 @@ use App\Product\Domain\ValueObject\Price;
 
 final class RegularUserPricePolicy implements PricePolicy
 {
-    const REGULAR_USER_RATIO = 1.03;
+    public const REGULAR_USER_RATIO = 1.03;
 
     /**
      * @throws PriceIsOutOfRange

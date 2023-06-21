@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 final class PremiumUserPricePolicyTest extends TestCase
 {
-
     public function testShouldCalculatePrice(): void
     {
         // Expected
