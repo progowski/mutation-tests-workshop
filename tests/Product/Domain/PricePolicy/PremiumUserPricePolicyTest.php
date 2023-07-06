@@ -10,18 +10,29 @@ use PHPUnit\Framework\TestCase;
 
 final class PremiumUserPricePolicyTest extends TestCase
 {
-    public function testShouldCalculatePrice(): void
+    /**
+     * @dataProvider priceDataProvider
+     */
+    public function testShouldCalculatePrice(float $price, float $expectedPrice): void
     {
-        // Expected
-        $expectedPrice = 174.99;
-
         // Given
         $policy = new PremiumUserPricePolicy();
 
         // When
-        $price = $policy->calculate(new Price(200));
+        $price = $policy->calculate(new Price($price));
 
         // Then
         self::assertSame($expectedPrice, $price->toFloat());
+    }
+
+    public function priceDataProvider(): array
+    {
+        return [
+            [100, 100.99],
+            [90, 90.99],
+            [200, 174.99],
+            [300, 261.99],
+            [400, 348.99]
+        ];
     }
 }
