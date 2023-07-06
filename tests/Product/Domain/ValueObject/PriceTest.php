@@ -76,6 +76,7 @@ final class PriceTest extends TestCase
     {
         // Expect
         $this->expectException(PriceIsOutOfRange::class);
+        $this->expectExceptionMessage('Price 1000001 is out of range');
 
         // When
         new Price(1000001.);
