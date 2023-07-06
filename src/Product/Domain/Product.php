@@ -39,7 +39,7 @@ final class Product
     /**
      * @throws PriceIsOutOfRange
      */
-    public function applyDiscountCode(float $amount): void
+    public function applyDiscountCode(): void
     {
         if ($this->isBrandOdd()) {
             $this->basePrice = $this->basePrice->multiply(0.9);
