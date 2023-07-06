@@ -62,4 +62,47 @@ final class PriceTest extends TestCase
         // Then
         self::assertSame($expectedPrice, $price->toFloat());
     }
+
+    public function testShouldThrowExceptionWhenDivisorIsZero(): void
+    {
+        // Expect
+        $this->expectException(\InvalidArgumentException::class);
+
+        // When
+        (new Price(10.))->divide(0.);
+    }
+
+    public function testShouldThrowExceptionWhenPriceIsMoreThanMaxProductPrice(): void
+    {
+        // Expect
+        $this->expectException(PriceIsOutOfRange::class);
+
+        // When
+        new Price(1000001.);
+    }
+    public function testShouldCreatePriceObjectWithMaxValue(): void
+    {
+        // When
+        $price = new Price(1000000.);
+
+        // Then
+        self::assertSame(1000000., $price->toFloat());
+    }
+
+    public function testShouldThrowExceptionWhenPriceIsLowerThan0(): void
+    {
+        // Expect
+        $this->expectException(PriceIsOutOfRange::class);
+
+        // When
+        new Price(-2.);
+    }
+    public function testShouldThrowExceptionWhenPriceIs0(): void
+    {
+        // Expect
+        $this->expectException(PriceIsOutOfRange::class);
+
+        // When
+        new Price(0.);
+    }
 }
