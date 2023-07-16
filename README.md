@@ -15,38 +15,23 @@ First install required dependencies using composer:
 composer install
 ```
 
-Next install infection phar file:
+Next run infection:
 
 ```bash
-wget https://github.com/infection/infection/releases/download/0.27.0/infection.phar  
+vendor/bin/infection
 ```
 
-and
+To run PHPUnit test run: 
 
 ```bash
-wget https://github.com/infection/infection/releases/download/0.27.0/infection.phar.asc  
+vendor/bin/phpunit
 ```
 
-Give execution permissions to infection.phar file:
-
-```bash
-chmod +x infection.phar
-```
 
 ## Troubleshooting
 
-### Lack of wget inside docker container
 
-Run inside docker container:
-
-```bash
- apt-get update
-```
-
-```bash
-apt-get install wget
-```
-## PHP Warning:  Failed loading Zend extension 'xdebug.so'
+### PHP Warning:  Failed loading Zend extension 'xdebug.so'
 
 Install xdebug via pecl
 
