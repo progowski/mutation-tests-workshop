@@ -46,3 +46,10 @@ Run inside docker container:
 ```bash
 apt-get install wget
 ```
+## PHP Warning:  Failed loading Zend extension 'xdebug.so'
+
+Install xdebug via pecl
+
+```bash
+pecl install xdebug
+```
